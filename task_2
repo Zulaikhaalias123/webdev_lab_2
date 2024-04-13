@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input[type="text"], input[type="email"], input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+            outline: none;
+            border: 1px solid #4CAF50;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Conference Registration Form</h2>
+
+<form id="registrationForm" action="#" method="post">
+    <label for="fullName">Full Name</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="email">Email Address </label>
+    <input type="email" id="email" name="email">
+
+    <label for="age">Age (18 - 99)</label>
+    <input type="number" id="age" name="age" min="18" max="99" required>
+    
+    <label for="gender">Gender:</label><br><br>
+    <input type="radio" name="sex" value="male">Male<br>
+    <input type="radio" name="sex" value="female">Female<br><br>
+
+    <label for="Country of Residence">Country of Residence:</label><br>
+    <select name="Country of residence">
+    <option value="Malaysia">Malaysia</option>
+    <option value="Malaysia">Indonesia</option>
+    <option value="Malaysia">Singapore</option>
+    <option value="Malaysia">Korea</option>
+    <option value="Malaysia">Germany</option>
+    <option value="Malaysia">Australia</option>
+    <option value="Malaysia">Japan</option>
+    <option value="Malaysia">India</option>
+    <option value="Malaysia">Vietnam</option>
+    <option value="Malaysia">Thailand</option>
+    </select><br><br>
+
+    <label for="Areas of Interest">Area of Interest:</label><br><br>
+    <input type="checkbox" name="Areas of Interest" value="Software Development">Software Development<br>
+    <input type="checkbox" name="Areas of Interest" value="Data Science">Data Science<br>
+    <input type="checkbox" name="Areas of Interest" value="Cybersecurity">Cybersecurity<br>
+    <input type="checkbox" name="Areas of Interest" value="Artificial Intelligence">Artificial Intelligence<br><br>
+
+    <label for="Experience Level">Experience Level:</label><br><br>
+    <input type="radio" name="level" value="beginner">Beginner<br>
+    <input type="radio" name="level" value="intermediate">Intermediate<br>
+    <input type="radio" name="level" value="advance">Advance<br><br>
+    
+    <label for="comments or questions">Comments or Questions:</label><br><br>
+    <textarea id="comments" name="comments" rows="4" cols="50">
+        Any comments or questions?
+        </textarea>
+        <br>
+    <input type="submit" value="Register">
+    <input type="submit" value="Reset">
+</form>
+
+<script>
+    // JavaScript to validate the age input
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        const ageInput = document.getElementById("age");
+        const age = parseInt(ageInput.value);
+
+        if (age < 18 || age > 99) {
+            alert("Age must be between 18 and 99.");
+            event.preventDefault();
+        }
+    });
+</script>
+<form>
+    
+</form>
+
+</body>
+</html>
